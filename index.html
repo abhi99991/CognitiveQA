@@ -38,7 +38,6 @@ body {
 
 ::selection { background: var(--accent); color: #fff; }
 
-/* ── HEADER ── */
 header {
   position: sticky;
   top: 0;
@@ -57,460 +56,89 @@ nav {
   align-items: center;
 }
 
-.logo {
-  text-decoration: none;
-  color: var(--text);
-}
+.logo { text-decoration: none; color: var(--text); }
+.logo-name { font-family: var(--serif); font-size: 1.35rem; line-height: 1; }
+.logo-desc { font-family: var(--mono); font-size: 0.6rem; color: var(--text-3); letter-spacing: 0.5px; margin-top: 1px; }
 
-.logo-name {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.logo-desc {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: var(--text-3);
-  letter-spacing: 0.5px;
-  margin-top: 1px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  align-items: center;
-}
-
-.nav-links a {
-  font-size: 0.85rem;
-  color: var(--text-2);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a { font-size: 0.85rem; color: var(--text-2); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
 
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
-.hamburger span {
-  width: 20px;
-  height: 1.5px;
-  background: var(--text);
-}
+.hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 20px; height: 1.5px; background: var(--text); }
 
-/* ── HERO ── */
-.hero {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 7rem 2rem 5rem;
-}
+.hero { max-width: 1100px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+.hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 400; line-height: 1.1; letter-spacing: -1px; max-width: 700px; }
+.hero h1 em { font-style: italic; }
+.hero-sub { margin-top: 1.5rem; font-size: 1.1rem; color: var(--text-2); max-width: 520px; line-height: 1.7; }
 
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  max-width: 700px;
-}
+.section-divider { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.section-divider hr { border: none; border-top: 1px solid var(--border); }
 
-.hero h1 em {
-  font-style: italic;
-}
+.section-wrapper { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--text-3); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.section-title { font-family: var(--serif); font-size: 2rem; font-weight: 400; }
 
-.hero-sub {
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-  color: var(--text-2);
-  max-width: 520px;
-  line-height: 1.7;
-}
+.featured-card { margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); transition: box-shadow 0.3s; cursor: pointer; }
+.featured-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); }
+.featured-img { background: var(--accent); display: flex; align-items: center; justify-content: center; min-height: 320px; position: relative; overflow: hidden; }
+.featured-img-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(circle at 25% 25%, #fff 1px, transparent 1px), radial-gradient(circle at 75% 75%, #fff 1px, transparent 1px); background-size: 30px 30px; }
+.featured-img-text { font-family: var(--serif); font-size: 3.5rem; color: rgba(255, 255, 255, 0.08); font-style: italic; position: relative; z-index: 1; }
+.featured-label { position: absolute; top: 1.5rem; left: 1.5rem; font-family: var(--mono); font-size: 0.6rem; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px; text-transform: uppercase; z-index: 1; }
+.featured-body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
 
-.hero-meta {
-  margin-top: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.hero-meta .author-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.hero-meta .divider {
-  width: 1px;
-  height: 16px;
-  background: var(--border);
-}
-
-.hero-meta a {
-  font-size: 0.85rem;
-  color: var(--text-3);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.hero-meta a:hover { color: var(--text); }
-
-/* ── DIVIDER ── */
-.section-divider {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.section-divider hr {
-  border: none;
-  border-top: 1px solid var(--border);
-}
-
-/* ── SECTION HEADER ── */
-.section-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-.section-label {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--text-3);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-/* ── FEATURED ── */
-.featured-card {
-  margin-top: 2.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--bg-card);
-  transition: box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.featured-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-}
-
-.featured-img {
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 320px;
-  position: relative;
-  overflow: hidden;
-}
-
-.featured-img-pattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  background-image:
-    radial-gradient(circle at 25% 25%, #fff 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, #fff 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-
-.featured-img-text {
-  font-family: var(--serif);
-  font-size: 3.5rem;
-  color: rgba(255, 255, 255, 0.08);
-  font-style: italic;
-  position: relative;
-  z-index: 1;
-}
-
-.featured-label {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-.featured-body {
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.post-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.tag {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.5px;
-  padding: 0.25rem 0.65rem;
-  border-radius: 3px;
-  text-transform: uppercase;
-}
-
+.post-meta { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+.tag { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.5px; padding: 0.25rem 0.65rem; border-radius: 3px; text-transform: uppercase; }
 .tag-ai { background: #f0f0ed; color: var(--text-2); }
 .tag-testing { background: #eef4ff; color: #2563eb; }
 .tag-infra { background: #fef4e8; color: #b45309; }
 .tag-voice { background: #f0fdf0; color: #16a34a; }
 .tag-safety { background: #fef2f2; color: #dc2626; }
+.tag-cicd { background: #f5f0ff; color: #7c3aed; }
+.post-date { font-family: var(--mono); font-size: 0.7rem; color: var(--text-3); }
 
-.post-date {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--text-3);
-}
-
-.featured-body h3 {
-  font-family: var(--serif);
-  font-size: 1.65rem;
-  font-weight: 400;
-  line-height: 1.3;
-  margin-bottom: 0.8rem;
-}
-
-.featured-body p {
-  font-size: 0.92rem;
-  color: var(--text-2);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.read-link {
-  font-size: 0.85rem;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: gap 0.2s;
-}
-
+.featured-body h3 { font-family: var(--serif); font-size: 1.65rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.8rem; }
+.featured-body p { font-size: 0.92rem; color: var(--text-2); line-height: 1.7; margin-bottom: 1.5rem; }
+.read-link { font-size: 0.85rem; color: var(--text); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
 .read-link:hover { gap: 0.8rem; }
 
-/* ── ARTICLES GRID ── */
-.articles-grid {
-  margin-top: 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.article-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--bg-card);
-  cursor: pointer;
-  transition: box-shadow 0.3s, transform 0.25s;
-  display: flex;
-  flex-direction: column;
-}
-
-.article-card:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
-}
-
-.article-img {
-  height: 160px;
-  position: relative;
-}
-
+.articles-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.article-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); cursor: pointer; transition: box-shadow 0.3s, transform 0.25s; display: flex; flex-direction: column; }
+.article-card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06); transform: translateY(-3px); }
+.article-img { height: 160px; position: relative; }
 .ai-1 { background: #0a0a0a; }
 .ai-2 { background: #1a1a2e; }
 .ai-3 { background: #1a0a0a; }
 .ai-4 { background: #0a1a0a; }
 .ai-5 { background: #0f0f1e; }
+.ai-6 { background: #1a1018; }
+.article-img .num { position: absolute; bottom: 1rem; right: 1rem; font-family: var(--mono); font-size: 0.6rem; color: rgba(255, 255, 255, 0.2); }
+.article-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.article-body h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.6rem; }
+.article-body p { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; flex: 1; }
+.article-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.article-footer .time { font-family: var(--mono); font-size: 0.65rem; color: var(--text-3); }
 
-.article-img .num {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.article-body {
-  padding: 1.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.article-body h4 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.35;
-  margin-bottom: 0.6rem;
-}
-
-.article-body p {
-  font-size: 0.85rem;
-  color: var(--text-2);
-  line-height: 1.6;
-  flex: 1;
-}
-
-.article-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1.2rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-}
-
-.article-footer .time {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  color: var(--text-3);
-}
-
-/* ── SUBSCRIBE ── */
-.subscribe-box {
-  margin-top: 2rem;
-  background: var(--accent);
-  border-radius: 8px;
-  padding: 3.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-}
-
-.subscribe-text h3 {
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 0.4rem;
-}
-
-.subscribe-text p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.subscribe-form {
-  display: flex;
-  gap: 0;
-  flex-shrink: 0;
-}
-
-.subscribe-form input {
-  padding: 0.85rem 1.2rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-right: none;
-  border-radius: 5px 0 0 5px;
-  color: #fff;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  width: 260px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
+.subscribe-box { margin-top: 2rem; background: var(--accent); border-radius: 8px; padding: 3.5rem; display: flex; justify-content: space-between; align-items: center; gap: 3rem; }
+.subscribe-text h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: #fff; margin-bottom: 0.4rem; }
+.subscribe-text p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); }
+.subscribe-form { display: flex; gap: 0; flex-shrink: 0; }
+.subscribe-form input { padding: 0.85rem 1.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-right: none; border-radius: 5px 0 0 5px; color: #fff; font-family: var(--sans); font-size: 0.85rem; width: 260px; outline: none; transition: border-color 0.2s; }
 .subscribe-form input::placeholder { color: rgba(255, 255, 255, 0.3); }
 .subscribe-form input:focus { border-color: rgba(255, 255, 255, 0.4); }
-
-.subscribe-form button {
-  padding: 0.85rem 1.8rem;
-  background: #fff;
-  color: var(--accent);
-  border: none;
-  border-radius: 0 5px 5px 0;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
+.subscribe-form button { padding: 0.85rem 1.8rem; background: #fff; color: var(--accent); border: none; border-radius: 0 5px 5px 0; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
 .subscribe-form button:hover { background: #f0f0f0; }
 
-/* ── FOOTER ── */
-footer {
-  border-top: 1px solid var(--border);
-  margin-top: 1rem;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-inner p {
-  font-size: 0.8rem;
-  color: var(--text-3);
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.footer-links a {
-  font-size: 0.8rem;
-  color: var(--text-3);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
+footer { border-top: 1px solid var(--border); margin-top: 1rem; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-inner p { font-size: 0.8rem; color: var(--text-3); }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; }
+.footer-links a { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text); }
 
-/* ── REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero { padding: 5rem 2rem 3rem; }
   .hero h1 { font-size: 2.5rem; }
@@ -523,24 +151,12 @@ footer {
   .subscribe-form input { flex: 1; width: auto; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  nav.open .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(250, 250, 248, 0.97);
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--border);
-    gap: 1rem;
-  }
+  nav.open .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 250, 248, 0.97); padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); gap: 1rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <nav id="navbar">
     <a href="#" class="logo">
@@ -559,16 +175,14 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <h1>Writing about the <em>quality</em> of intelligent systems</h1>
   <p class="hero-sub">Thoughts on Conversational AI, Agentic AI testing, LLM guardrails, and building software you can trust.</p>
-
 </section>
 
 <div class="section-divider"><hr></div>
 
-<!-- FEATURED -->
+<!-- FEATURED — NEW ARTICLE -->
 <section class="section-wrapper">
   <div class="section-label">Featured</div>
   <div class="section-title">Latest thinking</div>
@@ -576,17 +190,18 @@ footer {
   <div class="featured-card reveal">
     <div class="featured-img">
       <div class="featured-img-pattern"></div>
-      <div class="featured-img-text">01</div>
+      <div class="featured-img-text">New</div>
       <div class="featured-label">Featured Essay</div>
     </div>
     <div class="featured-body">
       <div class="post-meta">
-        <span class="tag tag-ai">Agentic AI</span>
+        <span class="tag tag-voice">Voice AI</span>
+        <span class="tag tag-cicd">CI/CD</span>
         <span class="post-date">May 2026</span>
       </div>
-      <h3>Why Testing Agentic AI Is Nothing Like Testing Traditional Software</h3>
-      <p>Agents make decisions, chain tools, and act autonomously. Traditional test plans weren't designed for this. Here's how we need to rethink quality assurance from the ground up.</p>
-      <a href="articles/agentic-ai-testing.html" class="read-link">Read article →</a>
+      <h3>Moving Voice Agents from "Vibe Checks" to Automated CI/CD</h3>
+      <p>Stop manually dialing your voice agent after every prompt change. Here's how to build an automated testing pipeline using scripted digital humans and deterministic A/B testing.</p>
+      <a href="articles/voice-agents-cicd.html" class="read-link">Read article →</a>
     </div>
   </div>
 </section>
@@ -600,9 +215,46 @@ footer {
 
   <div class="articles-grid">
 
+    <!-- NEW ARTICLE CARD -->
+    <article class="article-card reveal">
+      <div class="article-img ai-6">
+        <span class="num">01</span>
+      </div>
+      <div class="article-body">
+        <div class="post-meta">
+          <span class="tag tag-voice">Voice AI</span>
+          <span class="post-date">May 2026</span>
+        </div>
+        <h4>Moving Voice Agents from "Vibe Checks" to Automated CI/CD</h4>
+        <p>Why manual dialing doesn't scale, how hybrid simulation with Bluejay creates deterministic digital humans, and what metrics actually matter.</p>
+        <div class="article-footer">
+          <a href="articles/voice-agents-cicd.html" class="read-link">Read →</a>
+          <span class="time">10 min</span>
+        </div>
+      </div>
+    </article>
+
     <article class="article-card reveal">
       <div class="article-img ai-1">
         <span class="num">02</span>
+      </div>
+      <div class="article-body">
+        <div class="post-meta">
+          <span class="tag tag-ai">Agentic AI</span>
+          <span class="post-date">May 2026</span>
+        </div>
+        <h4>Why Testing Agentic AI Is Nothing Like Testing Traditional Software</h4>
+        <p>Agents make decisions, chain tools, and act autonomously. Traditional test plans weren't designed for this. Here's how we rethink QA from the ground up.</p>
+        <div class="article-footer">
+          <a href="articles/agentic-ai-testing.html" class="read-link">Read →</a>
+          <span class="time">9 min</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article-card reveal">
+      <div class="article-img ai-1">
+        <span class="num">03</span>
       </div>
       <div class="article-body">
         <div class="post-meta">
@@ -620,7 +272,7 @@ footer {
 
     <article class="article-card reveal">
       <div class="article-img ai-2">
-        <span class="num">03</span>
+        <span class="num">04</span>
       </div>
       <div class="article-body">
         <div class="post-meta">
@@ -638,7 +290,7 @@ footer {
 
     <article class="article-card reveal">
       <div class="article-img ai-3">
-        <span class="num">04</span>
+        <span class="num">05</span>
       </div>
       <div class="article-body">
         <div class="post-meta">
@@ -656,7 +308,7 @@ footer {
 
     <article class="article-card reveal">
       <div class="article-img ai-4">
-        <span class="num">05</span>
+        <span class="num">06</span>
       </div>
       <div class="article-body">
         <div class="post-meta">
@@ -674,7 +326,7 @@ footer {
 
     <article class="article-card reveal">
       <div class="article-img ai-5">
-        <span class="num">06</span>
+        <span class="num">07</span>
       </div>
       <div class="article-body">
         <div class="post-meta">
@@ -708,7 +360,6 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <p>&copy; 2026 Abhishek Ganguly</p>
